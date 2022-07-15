@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'
+	crossorigin='anonymous'></script>
+
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>      
+	      <script th:src="@{/main.js}"></script>
+	      <link th:href="@{/main.css}" rel="stylesheet" />
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	  
+</head>
+  
+      
+
+ <body ng-app="homeManagement" ng-controller="homeController" style="background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('images/img1.png');no-repeat :center center #505050; background-size: cover;">
+    <!--  background: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)),url('images/img1.png');no-repeat :center center #505050; background-size: cover;" -->
+     <nav class="navbar navbar-inverse"	style="font-size:20px;padding: 10px 15px;text-align: center;display: block;color: #34495e;box-shadow: 5px 5px;font-family: 'Times New Roman', serif;">
+  <div class="container-fluid" >
+    <div class="navbar-header">
+    <ul><li class="active">
+      <a class="navbar-brand" href="#"><i class="fa fa-group"
+        style="font-size: 24px"></i> CRM </a></li></ul>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/customer"><i
+          class="fa fa-user"></i> Customer</a></li>
+      <li><a href="/appointment"><i class='far fa-calendar-alt'
+          style='font-size: 18px'></i> Appointment</a></li>
+      <li><a href="/report"><i class="fa fa-bar-chart"
+          style="font-size: 18px"></i> Report</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container" >
+		<div class="row">
+		  <div class="col-sm-4"></div>
+		   <div class="col-sm-4" style="border:solid gray;margin-top:60px;padding:20px;border-radius:10px;background-image:url('https://images.pexels.com/photos/8941369/pexels-photo-8941369.jpeg?auto=compress&cs=tinysrgb&h=627&fit=crop&w=1200') ;no-repeat:center center #505050; background-size: cover;">
+		   <h2 style="text-align:center;font-family: 'Times New Roman', serif;font-weight: bold;">MAIN MENU</h2>
+		   <hr>
+			 <a href="/customer"> <button type="button"   class="btn btn-primary" style="width:100%;cursor: pointer;border-radius: 5em;border: 0;padding-left: 30px;padding-right: 30px;padding-bottom: 10px;padding-top: 10px;box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);">Customer</button> </a><br><br>
+		     <a href="/appointment"> <button type="button"class="btn btn-primary" style="width:100%;cursor: pointer;border-radius: 5em;border: 0;padding-left: 30px;padding-right: 30px;padding-bottom: 10px;padding-top: 10px;box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);">Appointment</button> </a><br><br>
+		     <a href="/report"> <button type="button"   class="btn btn-primary"  style="width:100%;cursor: pointer;border-radius: 5em;border: 0;padding-left: 30px;padding-right: 30px;padding-bottom: 10px;padding-top: 10px;box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);">Report</button> </a><br><br>
+		     <a href="/"> <button type="button"   class="btn btn-primary"  style="width:100%;cursor: pointer;border-radius: 5em;border: 0;padding-left: 30px;padding-right: 30px;padding-bottom: 10px;padding-top: 10px;box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);">Logout</button> </a><br><br>
+		   
+		   </div>
+		    <div class="col-sm-4"></div>
+		  
+		</div>
+</div>
+    
+    
+</body>
+</html>

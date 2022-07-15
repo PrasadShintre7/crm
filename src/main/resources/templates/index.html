@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8" name="viewport"
+	content="width=device-width, initial-scale=1.0">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+<script th:src="@{/main.js}"></script>
+<link th:href="@{/main.css}" rel="stylesheet" />
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+
+<!-- whole page container -->
+<body ng-app="LoginManagement" ng-controller="LoginController"
+	style="background-image: url('images/img2.jpeg'); no-repeat: center center #505050; background-size: cover;">
+
+	<div class="container">
+		<div class="row" style="margin-top: 10%;">
+			<div class="col-sm-4"></div>
+			<!--   <div class="col-sm-4" style="border: solid gray;padding:20px;border-radius:10px;box-shadow: 5px 10px #888888;">-->
+			<div class="col-sm-4"
+				style="border: solid gray; background-color: #FFFFFF; padding: 20px; width: 500px; height: 450px; border-radius: 1.5em; box-shadow: 5px 10px #888888; background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url('images/img1.png'); no-repeat: center center #505050; background-size: cover;">
+				<h1
+					style="text-align: center; padding-top: 5px; font-family: 'Times New Roman', serif; font-weight: bold;">CRM
+					Login</h1>
+				<hr>
+				<form ng-submit="submitLogin()">
+					<div class="form-group" style="padding-top: 15px;">
+						<!--   <label for="email"  style="text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);padding-top: 15px;">Username:</label>-->
+						<input type="text" ng-model="loginForm.username"
+							class="form-control"
+							style="color: rgb(38, 50, 56); font-weight: 700; font-size: 14px; letter-spacing: 1px; background: rgba(136, 126, 126, 0.04); padding: 30px; border-radius: 20px; outline: none; border: 5px solid rgba(0, 0, 0, 0.2); font-family: 'Ubuntu', sans-serif;"
+							placeholder="Enter Username/email here..." required />
+
+					</div>
+					<div class="form-group" style="padding-top: 15px;">
+						<!--   <label for="pwd" style="text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);padding-top: 15px;">Password:</label>-->
+						<input type="password" ng-model="loginForm.password"
+							class="form-control"
+							style="color: rgb(38, 50, 56); font-weight: 700; font-size: 14px; letter-spacing: 1px; background: rgba(136, 126, 126, 0.04); padding: 30px; border-radius: 20px; outline: none; border: 5px solid rgba(0, 0, 0, 0.2); font-family: 'Ubuntu', sans-serif;"
+							placeholder="Enter Password here..." required />
+
+					</div>
+					<div class="checkbox">
+						<label><input type="checkbox" name="remember">
+							Remember me</label>
+					</div>
+					<button type="submit" class="btn btn-success"
+						style="cursor: pointer; border-radius: 5em; color: #fff; border: 0; padding-left: 30px; padding-right: 30px; padding-bottom: 10px; padding-top: 10px; box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);">SignIn</button>
+					<a href="/signup"><button type="button" class="btn btn-primary"
+							style="cursor: pointer; border-radius: 5em; color: #fff; border: 0; padding-left: 30px; padding-right: 30px; padding-bottom: 10px; padding-top: 10px; box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);">SignUp</button></a>
+				</form>
+			</div>
+			<!--  <div style="position:fixed;left:0;bottom:0;width:100%;">
+                 <p style="text-align:center;">I am the Disclaimer and I'm telling you, by logging in, you agree to the ridiculously long terms that you didn't bother to read.</p>
+                 </div>-->
+			<div class="col-sm-4"></div>
+
+		</div>
+
+	</div>
+
+
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Getting Started: Serving Web Content</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta charset="utf-8" name="viewport"
+	content="width=device-width, initial-scale=1.0">
+
+
+
+<!-- 
+	 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script> 
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	   <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+        <script src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js"></script>
+        
+     
+        <script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap.min.js"></script>
+      -->
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'
+	crossorigin='anonymous'></script>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" />
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="https://code.angularjs.org/1.3.0/angular.js"></script>
+<script th:src="@{/report.js}"></script>
+<link th:href="@{/main.css}" rel="stylesheet" />
+
+</head>
+
+
+
+<body ng-app="ReportManagement" ng-controller="ReportController"
+	style="background: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), url('images/img2.png'); no-repeat: center center #505050; background-size: cover;">
+	<nav class="navbar navbar-inverse"
+		style="font-size: 20px; font-family: 'Times New Roman', serif; padding: 10px 15px; text-align: center; display: block; color: #34495e; box-shadow: 5px 5px;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/home"><i class="fa fa-group"
+					style="font-size: 24px"></i> CRM </a>
+			</div>
+			<ul class="nav navbar-nav">
+				<li><a href="/customer"><i class="fa fa-user"></i> Customer</a></li>
+				<li ><a href="/appointment"><i
+						class='far fa-calendar-alt' style='font-size: 18px'></i>
+						Appointment</a></li>
+				<li class="active"><a href="/report"><i class="fa fa-bar-chart"
+						style="font-size: 18px"></i> Report</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="/"><span class="glyphicon glyphicon-log-in"></span>
+						Logout</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+		<div id="form" style="">
+			<h3>Appointment</h3>
+			<div class="row" style="">
+
+				<div class="col-sm-12">
+
+					<form ng-submit="_refreshData()">
+						<table class="table">
+							<tr>
+								<td>From</td>
+								<td><input type="date" ng-model="reportForm.fromdate"
+									class="form-control" /></td>
+								<td>To</td>
+								<td><input type="date" ng-model="reportForm.todate"
+									class="form-control" /></td>
+								<td>
+									<button type="submit" class="btn btn-success">View</button>
+								</td>
+							</tr>
+
+						</table>
+					</form>
+					<table id="example" class="table table-striped table-bordered"
+						style="width: 100%">
+						<thead>
+							<tr>
+								<th>Appointment Id</th>
+								<th>Customer Name</th>
+								<th>Subject</th>
+								<th>Description</th>
+								<th>Location</th>
+								<th>Mobile</th>
+								<th>Date</th>
+								<th>Start Time</th>
+								<th>End Time</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<!-- $scope.employees -->
+							<tr ng-repeat="report in reports">
+								<td>{{ report.id }}</td>
+								<td>{{ report.fullname }}</td>
+								<td>{{ report.subject }}</td>
+								<td>{{ report.description }}</td>
+								<td>{{ report.location }}</td>
+								<td>{{ report.mobile }}</td>
+								<td>{{ report.adate }}</td>
+								<td>{{ report.starttime }}</td>
+								<td>{{ report.endtime }}</td>
+
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+		<br />
+
+	</div>
+
+	<script>
+   
+    
+    </script>
+</body>
+</html>
